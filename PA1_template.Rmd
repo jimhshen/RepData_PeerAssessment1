@@ -1,7 +1,5 @@
 ---
   title: "Reproducible Research: Peer Assessment 1"
-  output: 
-  html_document:
   keep_md: true
 ---
   
@@ -55,7 +53,7 @@ ggplot(data = avgDailyActivity,
   ylab("Average number of steps taken")
     
     
-#Interval with aximum number of steps
+#Interval with Maximum number of steps
 avgDailyActivity[which.max(avgDailyActivity$steps), ]$interval
 ```
 

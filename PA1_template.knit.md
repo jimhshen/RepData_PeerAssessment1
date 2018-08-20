@@ -1,7 +1,5 @@
 ---
   title: "Reproducible Research: Peer Assessment 1"
-  output: 
-  html_document:
   keep_md: true
 ---
   
@@ -76,7 +74,7 @@ ggplot(data = avgDailyActivity,
 <img src="PA1_template_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 
 ```r
-#Interval with aximum number of steps
+#Interval with Maximum number of steps
 avgDailyActivity[which.max(avgDailyActivity$steps), ]$interval
 ```
 
