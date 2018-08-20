@@ -6,7 +6,7 @@
   
 ## Loading and preprocessing the data
 
-```{r}
+```{r,echo=TRUE}
 # Set working directory, load packages
 setwd('D:/Dropbox/Coursera Reproducible Research/Project1')
 library(ggplot2)
@@ -20,7 +20,7 @@ activity$date <- as.Date(activity$date, "%Y-%m-%d")
 
 ## What is mean total number of steps taken per day?
   
-```{r}
+```{r,echo=TRUE}
 # Find the total of steps each day
 totalSteps <- tapply(activity$steps, activity$date, sum, na.rm = T)
 
@@ -40,7 +40,7 @@ median(totalSteps)
   
 ## What is the average daily activity pattern?
 
-```{r}
+```{r,echo=TRUE}
 #Make a time series plot
 avgDailyActivity <- aggregate(x=list(steps = activity$steps),
                       by=list(interval = activity$interval),
@@ -59,7 +59,7 @@ avgDailyActivity[which.max(avgDailyActivity$steps), ]$interval
 
 ## Imputing missing values
 
-```{r}
+```{r,echo=TRUE}
 #Calculate and report the total number of missing values in the dataset
 sum(is.na(activity$steps))
 
@@ -89,7 +89,7 @@ The imputed values differ from the estimates in the first part of the assignment
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-```{r}
+```{r,echo=TRUE}
 #Create a new weekday/weekend factor variable
 activity$dayType <- sapply(activity$date, function(x) {
         if (weekdays(x) == "Saturday" | weekdays(x) =="Sunday") {y <- "Weekend"}
